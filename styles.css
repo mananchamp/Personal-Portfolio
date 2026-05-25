@@ -857,7 +857,7 @@ body {
 
 /* Project link modifiers for dark backgrounds */
 .project-link--on-dark {
-  color: var(--color-pink);
+  color: var(--color-white);
 }
 
 .project-link--on-dark:hover {
