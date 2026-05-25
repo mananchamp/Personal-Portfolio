@@ -827,6 +827,55 @@ body {
   color: var(--color-white) !important;
 }
 
+/* Live Website Preview (Scaled Iframe) */
+.project-preview-wrap {
+  height: 200px;
+  width: 100%;
+  border: var(--border-width) solid var(--color-black);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  position: relative;
+  background-color: #f8f8f8;
+}
+
+.project-preview-iframe {
+  width: 200%;
+  height: 200%;
+  border: none;
+  transform: scale(0.5);
+  transform-origin: top left;
+  pointer-events: none;
+}
+
+.preview-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: pointer;
+  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.06) 100%);
+}
+
+/* Project link modifiers for dark backgrounds */
+.project-link--on-dark {
+  color: var(--color-pink);
+}
+
+.project-link--on-dark:hover {
+  color: var(--color-yellow);
+  border-color: var(--color-yellow);
+}
+
+.project-link-secondary--on-dark {
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+}
+
+.project-link-secondary--on-dark:hover {
+  background-color: var(--color-white);
+  color: var(--color-black) !important;
+}
+
 /* ==========================================================================
    WEBGL SHADER PLAYGROUND CARDS
    ========================================================================== */
