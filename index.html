@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brutalist Portfolio of Manan Chamaria, a 3D Creative Developer specializing in Next.js, WebGL, Three.js, and Framer Motion.">
+  <title>manan. // 3D Creative Developer</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- Structural Grid Background (Fixed 24px) -->
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <!-- Main Container -->
+  <div class="portfolio-container">
+    
+    <!-- Fixed Left Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <a href="#" class="logo" id="logo">
+          manan<span class="text-pink">.</span>
+        </a>
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span class="status-text">AVAILABLE FOR HIRE</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav" id="sidebar-nav">
+        <ul>
+          <li>
+            <a href="#about" class="nav-link" id="nav-about">
+              <span class="nav-name">about</span>
+              <span class="nav-num">02</span>
+            </a>
+          </li>
+          <li>
+            <a href="#projects" class="nav-link" id="nav-projects">
+              <span class="nav-name">projects</span>
+              <span class="nav-num">01</span>
+            </a>
+          </li>
+          <li>
+            <a href="#services" class="nav-link" id="nav-services">
+              <span class="nav-name">services</span>
+              <span class="nav-num">03</span>
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-link" id="nav-contact">
+              <span class="nav-name">contact</span>
+              <span class="nav-num">04</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p class="sidebar-cta-text">reserve a time to speak with me</p>
+        <a href="#calendly-booking" class="sidebar-cta" id="sidebar-cta-btn">
+          book a 30-min call
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="main-content">
+      
+      <!-- HERO SECTION -->
+      <section id="hero" class="section-group">
+        <div class="bento-grid hero-grid">
+          
+          <!-- Hero Main Card (Deep Black) -->
+          <div class="bento-card bg-black text-white col-span-8 row-span-2 hero-main-card">
+            <div class="card-content flex-col justify-between h-full">
+              <div class="hero-header">
+                <div class="tech-pill-container">
+                  <span class="tech-pill bg-pink text-black">NEXT.JS</span>
+                  <span class="tech-pill border-white text-white">WEBGL</span>
+                  <span class="tech-pill border-white text-white">THREE.JS</span>
+                </div>
+                <h1 class="hero-title text-uppercase">
+                  Manan Chamaria
+                </h1>
+                <p class="hero-subtitle font-mono text-yellow">
+                  3D Creative Developer
+                </p>
+              </div>
+              <div class="hero-footer-desc">
+                <div class="hero-contact-info font-mono text-muted text-sm">
+                  <p><a href="tel:+919667090655" class="hero-contact-link">+91 96670 90655</a></p>
+                  <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mananchamaria123@gmail.com" class="hero-contact-link" target="_blank">mananchamaria123@gmail.com</a></p>
+                  <p>Bengaluru, India</p>
+                </div>
+                <div class="arrow-down-indicator text-yellow" aria-hidden="true">↘</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Canvas Card (WebGL Canvas Showcase) -->
+          <div class="bento-card bg-cream col-span-4 row-span-2 hero-canvas-card" id="canvas-card">
+            <div class="card-header flex justify-between align-center">
+              <span class="mono-tag">RENDER_ENGINE.EXE</span>
+              <span class="fps-counter" id="fps-counter">60 FPS</span>
+            </div>
+            <div class="canvas-container" id="hero-canvas-container">
+              <!-- Three.js Canvas is dynamically rendered here -->
+            </div>
+            <div class="canvas-footer">
+              <span class="canvas-hint">[HOVER & DRAG TO SHAPE 3D]</span>
+            </div>
+          </div>
+
+          <!-- Interactive Tech Stack Card — sits directly below the canvas so chip clicks morph the 3D shape instantly -->
+          <div class="bento-card bg-black text-white col-span-12 tech-stack-card">
+            <div class="card-header-mono">
+              <span class="mono-tag">// TECH_STACK_MATRIX</span>
+            </div>
+            <h3 class="card-title text-uppercase text-white mt-1">THE SYSTEM STACK</h3>
+            <p class="text-muted mb-4 max-w-600">
+              Select stack components below to change geometries on the WebGL scene above. Notice how the shape adapts to stack-selected paradigms.
+            </p>
+            
+            <div class="tech-matrix">
+              <!-- Core -->
+              <div class="tech-category-group">
+                <h4 class="tech-cat-title">01 / FRAMEWORKS & LOGIC</h4>
+                <div class="tech-chips">
+                  <button class="tech-chip-btn" data-mesh="icosahedron">Next.js</button>
+                  <button class="tech-chip-btn" data-mesh="icosahedron">React</button>
+                  <button class="tech-chip-btn" data-mesh="icosahedron">TypeScript</button>
+                  <button class="tech-chip-btn" data-mesh="icosahedron">Vanilla JS</button>
+                </div>
+              </div>
+
+              <!-- Graphics -->
+              <div class="tech-category-group">
+                <h4 class="tech-cat-title">02 / GRAPHICS & WEBGL</h4>
+                <div class="tech-chips">
+                  <button class="tech-chip-btn active" data-mesh="torusknot">Three.js</button>
+                  <button class="tech-chip-btn" data-mesh="plane">GLSL Shaders</button>
+                  <button class="tech-chip-btn" data-mesh="torusknot">WebGL API</button>
+                  <button class="tech-chip-btn" data-mesh="torus">WebGPU Ready</button>
+                </div>
+              </div>
+
+              <!-- Motion -->
+              <div class="tech-category-group">
+                <h4 class="tech-cat-title">03 / MOTION & INTERACTION</h4>
+                <div class="tech-chips">
+                  <button class="tech-chip-btn" data-mesh="box">Framer Motion</button>
+                  <button class="tech-chip-btn" data-mesh="box">GSAP</button>
+                  <button class="tech-chip-btn" data-mesh="sphere">Web Audio API</button>
+                  <button class="tech-chip-btn" data-mesh="sphere">Physics-Engine</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="section-group anchor-offset">
+        <div class="section-heading-row">
+          <h2 class="section-title"><span class="section-num">02.</span> my journey & vision</h2>
+        </div>
+        
+        <div class="bento-grid about-grid">
+          
+          <!-- Bio Card -->
+          <div class="bento-card bg-white col-span-7 about-bio-card">
+            <h3 class="card-title text-uppercase">Merging Math, Code & Rebel Aesthetics</h3>
+            <div class="bio-text">
+              <p>
+                I am a creative engineer specializing in immersive web experiences, WebGL, and high-performance interactive design. Whether it's complex scroll-based animations using Framer Motion or building interactive 3D product visualizers in Three.js, I aim to design with absolute technical precision and a little rebellion.
+              </p>
+              <p>
+                My philosophy is rooted in brutalist design: high-contrast layout grids, bold typography, raw interactive states, and extreme performance optimization. Every line of WebGL code is handcrafted for high frame rates, fluid physics, and smooth user scroll events.
+              </p>
+              <div class="bio-highlight bg-yellow text-black mt-3">
+                Currently engineering the future of 3D web interfaces. Let's connect.
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Stats Box -->
+          <div class="bento-card bg-pink text-black col-span-5 stats-card-group flex-col justify-between">
+            <div class="stats-header">
+              <span class="mono-tag">SYSTEM_STATS_2026</span>
+              <h3 class="card-title text-uppercase mt-2">PERFORMANCE METRICS</h3>
+            </div>
+            
+            <div class="stats-grid">
+              <div class="stat-item border-bottom-black">
+                <span class="stat-number">60+</span>
+                <span class="stat-label">FPS Target</span>
+              </div>
+              <div class="stat-item border-bottom-black border-left-black">
+                <span class="stat-number">40k+</span>
+                <span class="stat-label">Vertices Rendered</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">30+</span>
+                <span class="stat-label">Projects Deployed</span>
+              </div>
+              <div class="stat-item border-left-black">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">WebGL Responsive</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION -->
+      <section id="projects" class="section-group anchor-offset">
+        <div class="section-heading-row">
+          <h2 class="section-title"><span class="section-num">01.</span> featured projects</h2>
+        </div>
+
+        <div class="bento-grid projects-grid">
+
+          <!-- Project 1 (Daffy's Brewgarden) -->
+          <div class="bento-card bg-white col-span-6 project-card flex-col justify-between" id="project-1">
+            <div class="project-top">
+              <div class="project-header flex justify-between align-start">
+                <span class="project-number">[01]</span>
+                <span class="project-tech">NEXT.JS / FRAMER MOTION / GSAP</span>
+              </div>
+              <h3 class="project-title text-uppercase mt-3">Daffy's Brewgarden</h3>
+              <p class="project-desc text-muted mt-2">
+                A scroll-driven marketing experience for a modern brewery. Features silky smooth narrative timeline animations, kinetic text layouts, and custom scroll triggers.
+              </p>
+            </div>
+            
+            <div class="project-media-placeholder mt-3" style="background-color: #fcf042;">
+              <span class="project-placeholder-text text-black">[ Scroll-Driven Brewery Site ]</span>
+            </div>
+
+            <div class="project-actions flex justify-between align-center mt-3">
+              <a href="https://mananchamp.github.io/daffys-brewgarden-2/" class="project-link" target="_blank">// LIVE DEMO ↗</a>
+              <a href="#" class="project-link-secondary" target="_blank">GITHUB</a>
+            </div>
+          </div>
+
+          <!-- Project 2 (Rathi Caterers) -->
+          <div class="bento-card bg-white col-span-6 project-card flex-col justify-between" id="project-2">
+            <div class="project-top">
+              <div class="project-header flex justify-between align-start">
+                <span class="project-number">[02]</span>
+                <span class="project-tech">HTML5 / VANILLA CSS / INTERACTIVE JS</span>
+              </div>
+              <h3 class="project-title text-uppercase mt-3">Rathi Caterers</h3>
+              <p class="project-desc text-muted mt-2">
+                A premium, elegant showcase for a legacy catering brand. Features interactive wedding and event menus, a smooth scroll-driven layout, custom food counter displays, and booking inquiry workflows.
+              </p>
+            </div>
+            
+            <div class="project-media-placeholder mt-3" style="background-color: #ff3377;">
+              <span class="project-placeholder-text text-white">[ Premium Catering & Culinary Experience ]</span>
+            </div>
+
+            <div class="project-actions flex justify-between align-center mt-3">
+              <a href="https://mananchamp.github.io/rathi-caterers/" class="project-link" target="_blank">// LIVE DEMO ↗</a>
+              <a href="#" class="project-link-secondary" target="_blank">GITHUB</a>
+            </div>
+          </div>
+
+          <!-- Project 3 (Maniams Wooden Puzzle) -->
+          <div class="bento-card bg-black text-white col-span-12 project-card-horizontal">
+            <div class="grid grid-cols-2 gap-4 h-full project-horizontal-layout">
+              <div class="flex-col justify-between h-full p-content">
+                <div class="project-top">
+                  <div class="project-header flex justify-between align-start">
+                    <span class="project-number">[03]</span>
+                    <span class="project-tech text-pink">NEXT.JS / HTML5 CANVAS / SCROLL ANIMATION</span>
+                  </div>
+                  <h3 class="project-title text-uppercase text-white mt-3">Maniams Wooden Puzzle</h3>
+                  <p class="project-desc text-muted mt-2">
+                    An immersive scroll-driven brand experience for premium handcrafted wooden toy sets. Features a custom high-performance canvas sequence loading pipeline synchronized with scroll progress, responsive layout frameworks, and fluid interactive feedback.
+                  </p>
+                </div>
+                <div class="project-actions flex justify-between align-center mt-4">
+                  <a href="https://mananchamp.github.io/maniams-wooden-toys/" class="project-link text-pink" target="_blank">// LIVE DEMO ↗</a>
+                  <a href="https://github.com/mananchamp/maniams-wooden-toys" class="project-link-secondary text-white" target="_blank">GITHUB</a>
+                </div>
+              </div>
+
+              <!-- Animated Wooden Puzzle Block Mockup -->
+              <div class="project-mockup-right bg-neutral" id="particle-mockup-container">
+                <canvas id="particle-simulation-canvas"></canvas>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SHADER PLAYGROUND SECTION -->
+      <section id="playground" class="section-group">
+        <div class="bento-grid playground-grid">
+          
+          <!-- WebGL Canvas Container -->
+          <div class="bento-card bg-black col-span-7 row-span-1 canvas-playground-card flex-col justify-between" id="shader-card">
+            <div class="card-header flex justify-between align-center text-white">
+              <span class="mono-tag">// LIVE_FRAGMENT_SHADER.GLSL</span>
+              <span class="active-badge">ACTIVE SHADER RUNNING</span>
+            </div>
+            
+            <div class="shader-canvas-container" id="shader-canvas-parent">
+              <canvas id="shader-playground-canvas"></canvas>
+            </div>
+            
+            <div class="shader-footer flex justify-between align-center">
+              <span class="mono-tag text-muted">INPUT UNIFORMS</span>
+              <span class="mono-tag text-muted" id="render-time">TIME: 0.00s</span>
+            </div>
+          </div>
+
+          <!-- Controls Container -->
+          <div class="bento-card bg-green text-black col-span-5 row-span-1 controls-playground-card flex-col justify-between">
+            <div class="controls-header">
+              <span class="mono-tag">SHADER_CONTROLLER.INI</span>
+              <h3 class="card-title text-uppercase mt-2">SHAPING VECTOR FIELDS</h3>
+              <p class="card-desc mt-2">
+                Use the brutalist controls below to send real-time values into the compiled fragment shader on the left.
+              </p>
+            </div>
+
+            <div class="brutalist-controls mt-4">
+              <!-- Slider 1 -->
+              <div class="slider-group">
+                <div class="slider-info flex justify-between align-center">
+                  <span class="slider-label">u_speed (Time Scale)</span>
+                  <span class="slider-value" id="val-speed">1.0</span>
+                </div>
+                <input type="range" min="0" max="4" step="0.1" value="1.0" class="brutalist-slider" id="control-speed">
+              </div>
+
+              <!-- Slider 2 -->
+              <div class="slider-group mt-3">
+                <div class="slider-info flex justify-between align-center">
+                  <span class="slider-label">u_frequency (Noise Density)</span>
+                  <span class="slider-value" id="val-freq">3.0</span>
+                </div>
+                <input type="range" min="1" max="10" step="0.1" value="3.0" class="brutalist-slider" id="control-freq">
+              </div>
+
+              <!-- Slider 3 -->
+              <div class="slider-group mt-3">
+                <div class="slider-info flex justify-between align-center">
+                  <span class="slider-label">u_hue (Color Shift)</span>
+                  <span class="slider-value" id="val-hue">0.40</span>
+                </div>
+                <input type="range" min="0" max="1" step="0.01" value="0.40" class="brutalist-slider" id="control-hue">
+              </div>
+            </div>
+
+            <div class="controls-footer flex gap-2 mt-4">
+              <button class="shader-preset-btn active" data-preset="liquid">LIQUID NOISE</button>
+              <button class="shader-preset-btn" data-preset="aurora">AURORA GLOW</button>
+              <button class="shader-preset-btn" data-preset="grid">CELLULAR</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SERVICES SECTION -->
+      <section id="services" class="section-group anchor-offset">
+        <div class="section-heading-row">
+          <h2 class="section-title"><span class="section-num">03.</span> services</h2>
+        </div>
+
+        <div class="bento-grid services-grid">
+          
+          <!-- Service 1 -->
+          <div class="bento-card bg-white col-span-4 service-card flex-col justify-between">
+            <div>
+              <span class="service-num">[A]</span>
+              <h3 class="service-title text-uppercase mt-3">3D Web Experiences</h3>
+              <p class="service-description text-muted mt-3">
+                Integrating 3D graphic scenes directly into standard web environments. From GLSL shaders and custom procedural materials to complex glTF asset loader flows, built to run seamlessly across mobile and desktop.
+              </p>
+            </div>
+            <div class="service-tech-list mt-4">
+              <span class="service-tag">→ Three.js Integration</span>
+              <span class="service-tag">→ Custom Shaders</span>
+              <span class="service-tag">→ WebGL Optimization</span>
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="bento-card bg-white col-span-4 service-card flex-col justify-between">
+            <div>
+              <span class="service-num">[B]</span>
+              <h3 class="service-title text-uppercase mt-3">Creative Frontend</h3>
+              <p class="service-description text-muted mt-3">
+                Setting up high-performance routing, rendering, and image loading paradigms inside React/Next.js, paired with custom page transitions using GSAP and Framer Motion for cohesive spatial navigation.
+              </p>
+            </div>
+            <div class="service-tech-list mt-4">
+              <span class="service-tag">→ Next.js Architecture</span>
+              <span class="service-tag">→ Framer Motion</span>
+              <span class="service-tag">→ Micro-interactions</span>
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="bento-card bg-black text-white col-span-4 service-card flex-col justify-between service-card-highlight">
+            <div>
+              <span class="service-num text-pink">[C]</span>
+              <h3 class="service-title text-uppercase text-pink mt-3">Performance Audits</h3>
+              <p class="service-description text-muted mt-3">
+                Fixing frame drops, memory leaks, and render bottlenecks. Profiling GPU memory draw calls, mesh compression, geometry merging, and writing lightweight math routines.
+              </p>
+            </div>
+            <div class="service-tech-list mt-4">
+              <span class="service-tag text-pink border-pink">→ Frame Rate Optimization</span>
+              <span class="service-tag text-pink border-pink">→ Asset Compression</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="section-group anchor-offset">
+        <div class="section-heading-row">
+          <h2 class="section-title"><span class="section-num">04.</span> it's time to build something interactive.</h2>
+        </div>
+
+        <div class="bento-grid contact-grid">
+          
+          <!-- Contact Info -->
+          <div class="bento-card bg-black text-white col-span-12 flex-col justify-between contact-info-card">
+            <div>
+              <span class="mono-tag">// CLIENT_INITIATION</span>
+              <h3 class="card-title text-uppercase text-white mt-2">Ready to expand your spatial web footprint?</h3>
+              <p class="text-muted mt-3">
+                Drop a line with your project details, whether it is an interactive marketing site, a product configurator, or complex GPU animations. I respond within 24 standard business hours.
+              </p>
+            </div>
+
+            <div class="contact-links-group mt-4">
+              <div class="contact-detail-row">
+                <span class="detail-label">SECURE_CHANNEL:</span>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mananchamaria123@gmail.com" class="detail-link text-yellow" target="_blank">mananchamaria123@gmail.com</a>
+              </div>
+              <div class="contact-detail-row">
+                <span class="detail-label">PHONE:</span>
+                <a href="tel:+919667090655" class="detail-link text-yellow">+91 96670 90655</a>
+              </div>
+              <div class="contact-detail-row">
+                <span class="detail-label">LOC:</span>
+                <span class="detail-val">Bengaluru, 560001</span>
+              </div>
+            </div>
+
+            <div class="social-links-grid mt-4 flex gap-2">
+              <a href="https://github.com/mananchamp" class="social-badge-btn" target="_blank">GITHUB ↗</a>
+              <a href="#" class="social-badge-btn" target="_blank">LINKEDIN ↗</a>
+            </div>
+          </div>
+
+          <!-- Calendly Booking Card -->
+          <div class="bento-card bg-white col-span-12 calendly-embed-card" id="calendly-booking">
+            <span class="mono-tag text-black">// CALENDLY_SCHEDULER.SH</span>
+            <h3 class="card-title text-uppercase mt-2 mb-4">Book a 30-Min Session</h3>
+            <div class="calendly-container">
+              <!-- Calendly inline widget begin -->
+              <div class="calendly-inline-widget" data-url="https://calendly.com/mananchamaria123?hide_landing_page_details=1" style="min-width:320px;height:700px;"></div>
+              <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+              <!-- Calendly inline widget end -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Site Footer -->
+      <footer class="site-footer">
+        <div class="footer-border"></div>
+        <div class="footer-content flex justify-between align-center">
+          <span class="footer-copy">© 2026 MANAN CHAMARIA. PUBLIC LICENSE.</span>
+          <span class="footer-system">SYS_STATUS: 100% OPERATIONAL // BENGALURU, INDIA</span>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- Custom App Script -->
+  <script src="app.js"></script>
+</body>
+</html>
