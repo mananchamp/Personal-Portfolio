@@ -1355,17 +1355,48 @@ body {
   color: var(--color-black);
 }
 
+.pricing-price-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
 .pricing-price {
   font-size: 2.25rem;
   font-weight: 900;
   color: var(--color-black);
-  filter: blur(6px);
-  transition: filter 0.3s ease;
+  filter: blur(8px);
+  transition: opacity 0.3s ease;
   user-select: none;
 }
 
-.pricing-price:hover {
-  filter: blur(0);
+.pricing-price-overlay {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-pink);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-black);
+  padding: 6px 14px;
+  border-radius: var(--border-radius-sm);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  box-shadow: 3px 3px 0px var(--color-black);
+  z-index: 10;
+}
+
+.pricing-price-container:hover .pricing-price {
+  opacity: 0.15;
+}
+
+.pricing-price-container:hover .pricing-price-overlay {
+  opacity: 1;
 }
 
 .pricing-pkg-desc {
