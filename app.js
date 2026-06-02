@@ -1,5 +1,5 @@
 /**
- * manan. // 3D Creative Developer
+ * MotionForge. // 3D Creative Developer
  * Core Interactive Client Script
  * Features:
  *   1. Three.js Hero Geometry Renders & Interactive Morphing
