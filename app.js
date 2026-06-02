@@ -867,6 +867,33 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  // -------------------------------------------------------------
+  // 5. PRICING TABS CONTROLLER
+  // -------------------------------------------------------------
+  function initPricingTabs() {
+    const tabBtns = document.querySelectorAll('.pricing-tab-btn');
+    const tabPanes = document.querySelectorAll('.pricing-tab-content');
+    
+    if (tabBtns.length === 0) return;
+    
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons and panes
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabPanes.forEach(p => p.classList.remove('active'));
+        
+        // Add active to current button
+        btn.classList.add('active');
+        
+        // Add active to matching content pane
+        const targetTab = btn.getAttribute('data-tab');
+        const targetPane = document.getElementById(`pane-${targetTab}`);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    });
+  }
   
   
   // -------------------------------------------------------------
@@ -876,5 +903,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initShaderPlayground();
   initParticleSandbox();
   initScrollSpy();
+  initPricingTabs();
   
 });

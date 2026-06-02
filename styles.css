@@ -1297,6 +1297,152 @@ body {
 }
 
 /* ==========================================================================
+   PRICING SECTION STYLING
+   ========================================================================== */
+.pricing-card {
+  padding: 32px;
+}
+
+.pricing-tabs {
+  border: var(--border-width) solid var(--color-black);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: var(--color-white);
+  width: 100%;
+}
+
+.pricing-tab-btn {
+  flex: 1;
+  padding: 16px;
+  font-family: var(--font-header);
+  font-weight: 800;
+  font-size: 1.15rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  border: none;
+  border-right: var(--border-width) solid var(--color-black);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  outline: none;
+}
+
+.pricing-tab-btn:last-child {
+  border-right: none;
+}
+
+.pricing-tab-btn:hover {
+  background-color: var(--color-pink);
+  color: var(--color-white);
+}
+
+.pricing-tab-btn.active {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.pricing-tab-content {
+  display: none;
+}
+
+.pricing-tab-content.active {
+  display: block;
+}
+
+.pricing-pkg-title {
+  font-family: var(--font-header);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.pricing-price {
+  font-size: 2.25rem;
+  font-weight: 900;
+  color: var(--color-black);
+}
+
+.pricing-pkg-desc {
+  font-size: 1rem;
+  max-width: 650px;
+}
+
+.pricing-meta {
+  gap: 24px;
+}
+
+.pricing-features-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pricing-features-list li {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pricing-features-list li.included {
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.pricing-features-list li.excluded {
+  color: var(--color-muted);
+  opacity: 0.45;
+}
+
+.pricing-features-list li.excluded svg {
+  opacity: 0.45;
+}
+
+.pricing-continue-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 16px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+  font-family: var(--font-header);
+  font-weight: 800;
+  font-size: 1.25rem;
+  border-radius: var(--border-radius-pill);
+  border: var(--border-width) solid var(--color-black);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.pricing-continue-btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-pink);
+}
+
+.pricing-continue-btn .arrow {
+  transition: transform 0.15s ease;
+}
+
+.pricing-continue-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.custom-pricing-card {
+  box-shadow: var(--shadow-pink);
+}
+
+.pricing-perks .perk-row {
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
    RESPONSIVE DESIGN (MEDIA QUERIES)
    ========================================================================== */
 
