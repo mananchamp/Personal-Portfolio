@@ -1355,25 +1355,23 @@ body {
   color: var(--color-black);
 }
 
-.pricing-price-container {
+.pricing-price {
   position: relative;
   display: inline-block;
-  cursor: pointer;
-}
-
-.pricing-price {
   font-size: 2.25rem;
   font-weight: 900;
   color: var(--color-black);
   filter: blur(8px);
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   user-select: none;
+  cursor: pointer;
 }
 
-.pricing-price-overlay {
+.pricing-price::after {
+  content: "Contact to know the price";
   position: absolute;
-  top: 50%;
   left: 0;
+  top: 50%;
   transform: translateY(-50%);
   font-family: var(--font-mono);
   font-size: 0.85rem;
@@ -1385,17 +1383,19 @@ body {
   border-radius: var(--border-radius-sm);
   white-space: nowrap;
   opacity: 0;
+  filter: blur(0px);
   transition: opacity 0.3s ease;
   pointer-events: none;
   box-shadow: 3px 3px 0px var(--color-black);
   z-index: 10;
 }
 
-.pricing-price-container:hover .pricing-price {
-  opacity: 0.15;
+.pricing-price:hover {
+  filter: blur(0px);
+  color: transparent;
 }
 
-.pricing-price-container:hover .pricing-price-overlay {
+.pricing-price:hover::after {
   opacity: 1;
 }
 
